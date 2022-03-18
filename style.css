@@ -2,7 +2,7 @@
 
 :root {
     --color-white: hsl(252, 30%, 100%);
-    --color-light: hsl(252,30%,95%);
+    --color-light: hsl(252, 30%, 95%);
     --color-gray: hsl(252, 15%, 65%);
     --color-primary: hsl(252, 75%, 60%);
     --color-secondary: hsl(252, 100%, 90%);
@@ -19,7 +19,9 @@
 }
 
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -30,10 +32,10 @@
 }
 
 body {
- font-family: 'Poppins' sans-serif;
- color: var(--color-dark);
- background-color: var(--color-light);
- overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    overflow-x: hidden;
 }
 
 /* GENERAL STYLES */
@@ -60,7 +62,7 @@ img {
     font-weight: 500;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all .3 ease;
+    transition: all .3s ease;
     font-size: .9rem;
 }
 
