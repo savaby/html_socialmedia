@@ -733,6 +733,11 @@ main .container .right {
         width: 20rem;
     }
 
+    .left .notifications-popup::before {
+        left: initial;
+        right: -0.6rem;
+    }
+
     main .container .middle {
         grid-column: 1/3;
     }
