@@ -12,6 +12,7 @@ const theme = document.querySelector("#theme")
 const themeModal = document.querySelector(".customize-theme")
 var root = document.querySelector(":root")
 const fontSizes = document.querySelectorAll(".choose-size span")
+const colorPalette = document.querySelectorAll(".choose-color span")
 
 const changeActiveItem = () => {
     menuItems.forEach((item) => {
@@ -109,5 +110,32 @@ fontSizes.forEach((size) => {
             root.style.setProperty("--sticky-top-right:", "-35rem")
         }
         document.querySelector("html").style.fontSize = fontSize
+    })
+})
+
+const changeActiveColor = () => {
+    colorPalette.forEach((color) => {
+        color.classList.remove("active")
+    })
+}
+
+colorPalette.forEach((color) => {
+    color.addEventListener("click", () => {
+        let primaryHue
+
+        if (color.classList.contains("color-1")) {
+            primaryHue = 252
+        } else if (color.classList.contains("color-2")) {
+            primaryHue = 52
+        } else if (color.classList.contains("color-3")) {
+            primaryHue = 352
+        } else if (color.classList.contains("color-4")) {
+            primaryHue = 152
+        } else if (color.classList.contains("color-5")) {
+            primaryHue = 202
+        }
+        changeActiveColor()
+        color.classList.add("active")
+        root.style.setProperty("--primary-color-hue", primaryHue)
     })
 })
