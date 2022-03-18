@@ -2,6 +2,8 @@ const menuItems = document.querySelectorAll(".menu-item")
 
 const messagesNotification = document.querySelector("#messages-notifications")
 const messages = document.querySelector(".messages")
+const message = messages.querySelectorAll(".message")
+const messageSearch = document.querySelector("#message-search")
 
 const changeActiveItem = () => {
     menuItems.forEach((item) => {
@@ -25,6 +27,21 @@ menuItems.forEach((item) => {
         }
     })
 })
+
+const searchMessage = () => {
+    const val = messageSearch.value.toLowerCase()
+    message.forEach((chat) => {
+        let name = chat.querySelector("h5").textContent.toLowerCase()
+        console.log(chat)
+        if (name.indexOf(val) !== -1) {
+            chat.style.display = "flex"
+        } else {
+            chat.style.display = "none"
+        }
+    })
+}
+
+messageSearch.addEventListener("keyup", searchMessage)
 
 messagesNotification.addEventListener("click", () => {
     messages.style.boxShadow = "0 0 1rem var(--color-primary)"
