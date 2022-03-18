@@ -1,9 +1,15 @@
+// MENU
 const menuItems = document.querySelectorAll(".menu-item")
 
+// MESSAGES
 const messagesNotification = document.querySelector("#messages-notifications")
 const messages = document.querySelector(".messages")
 const message = messages.querySelectorAll(".message")
 const messageSearch = document.querySelector("#message-search")
+
+// THEME
+const theme = document.querySelector("#theme")
+const themeModal = document.querySelector(".customize-theme")
 
 const changeActiveItem = () => {
     menuItems.forEach((item) => {
@@ -51,3 +57,17 @@ messagesNotification.addEventListener("click", () => {
         messages.style.boxShadow = "none"
     }, 2000)
 })
+
+const openThemeModal = () => {
+    themeModal.style.display = "grid"
+}
+
+const closeThemeModal = (e) => {
+    if (e.target.classList.contains("customize-theme")) {
+        themeModal.style.display = "none"
+    }
+}
+
+themeModal.addEventListener("click", closeThemeModal)
+
+theme.addEventListener("click", openThemeModal)
