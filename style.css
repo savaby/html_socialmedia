@@ -406,7 +406,7 @@ main .container .left .profile {
     margin-left: -0.6rem;
 }
 
-.middle .liked-by span:first-child(1) {
+.middle .liked-by span:first-child {
     margin-left: 0;
 }
 
