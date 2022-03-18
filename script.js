@@ -13,6 +13,9 @@ const themeModal = document.querySelector(".customize-theme")
 var root = document.querySelector(":root")
 const fontSizes = document.querySelectorAll(".choose-size span")
 const colorPalette = document.querySelectorAll(".choose-color span")
+const bg1 = document.querySelector(".bg-1")
+const bg2 = document.querySelector(".bg-2")
+const bg3 = document.querySelector(".bg-3")
 
 const changeActiveItem = () => {
     menuItems.forEach((item) => {
@@ -138,4 +141,47 @@ colorPalette.forEach((color) => {
         color.classList.add("active")
         root.style.setProperty("--primary-color-hue", primaryHue)
     })
+})
+
+let lightColorLightness
+let whiteColorLightness
+let darkColorLightness
+
+const changeBg = () => {
+    root.style.setProperty("--light-color-lightness", lightColorLightness)
+    root.style.setProperty("--white-color-lightness", whiteColorLightness)
+    root.style.setProperty("--dark-color-lightness", darkColorLightness)
+}
+
+bg1.addEventListener("click", () => {
+    darkColorLightness = "17%"
+    whiteColorLightness = "100%"
+    lightColorLightness = "95%"
+
+    bg1.classList.add("active")
+    bg2.classList.remove("active")
+    bg3.classList.remove("active")
+    changeBg()
+})
+
+bg2.addEventListener("click", () => {
+    darkColorLightness = "95%"
+    whiteColorLightness = "20%"
+    lightColorLightness = "15%"
+
+    bg2.classList.add("active")
+    bg1.classList.remove("active")
+    bg3.classList.remove("active")
+    changeBg()
+})
+
+bg3.addEventListener("click", () => {
+    darkColorLightness = "95%"
+    whiteColorLightness = "10%"
+    lightColorLightness = "0%"
+
+    bg3.classList.add("active")
+    bg1.classList.remove("active")
+    bg2.classList.remove("active")
+    changeBg()
 })
